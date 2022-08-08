@@ -11,6 +11,7 @@ builder.Services.AddDotaModule();
 var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
+app.Urls.Add("http://*:5010");
 
 //Add our API endpoints.
 app.AddDotaEndpoints();
