@@ -1,0 +1,4 @@
+#!/bin/bash
+touch /tmp/foo
+systemctl stop api-bitbucket.service || true
+systemctl disable api-bitbucket.service || true

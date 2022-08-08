@@ -1,0 +1,10 @@
+[Unit]
+Description=Bitbucket API service
+
+[Service]
+Type=notify
+ExecStart=/opt/api/api
+WorkingDirectory=/opt/api
+
+[Install]
+WantedBy=multi-user.target

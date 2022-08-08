@@ -1,0 +1,6 @@
+Package: api-bitbucket
+Version: 0.1
+Maintainer: Jan Marius
+Architecture: amd64
+Description: A silly toy API.
+
