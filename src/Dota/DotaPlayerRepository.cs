@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace API.Dota;
 
 public class DotaPlayerRepository
@@ -6,12 +8,16 @@ public class DotaPlayerRepository
     
     public DotaPlayerRepository()
     {
-        _players.Add(new DotaPlayer("76561198017867872", "Anders"));
+        var anders = new DotaPlayer("76561198017867872", "Anders");
+        anders.ExtraInfo.Add("HasTheKids", ISOWeek.GetWeekOfYear(DateTime.Now) / 2 > 0);
+        _players.Add(anders);
+        
         _players.Add(new DotaPlayer("76561197977798885", "Pål"));
         _players.Add(new DotaPlayer("76561198274844145", "Lee"));
         _players.Add(new DotaPlayer("76561198006174610", "Mike"));
         _players.Add(new DotaPlayer("76561198056560806", "Lars"));
         _players.Add(new DotaPlayer("76561197974437443", "Johnny"));
+        _players.Add(new DotaPlayer("76561198022057846", "JMS"));
     }
     
     public List<DotaPlayer> Get()
@@ -35,4 +41,6 @@ public class DotaPlayer
     public bool PlayingDota => SteamDetails is { GameId: "570" };
 
     public string? NickName => SteamDetails?.PersonaName;
+
+    public Dictionary<string, dynamic> ExtraInfo { get; set; } = new();
 }

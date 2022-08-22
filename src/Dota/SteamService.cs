@@ -6,8 +6,8 @@ namespace API.Dota;
 
 public class SteamDetails
 {
-    public string SteamId { get; set; }
-    public string PersonaName { get; set; }
+    public string? SteamId { get; set; }
+    public string? PersonaName { get; set; }
     public string? GameId { get; set; }
 }
 
